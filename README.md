@@ -2,13 +2,16 @@
 
 templates using direnv + nix-direnv
 
-- [rust](rust/):
+- [rust](rust/)
+- [typst](typst/)
 
-  ```sh
-  $ mkdir proj
-  $ nix flake -t "git+https://codeberg.org/fumnanya/flakes#rust"
-  $ direnv allow
-  $ cargo init
-  ```
+example usage:
 
-  you can set a registry: `nix registry add personal git+https://codeberg.org/fumnanya/flakes && nix flake -t "personal#rust"`.
+```sh
+$ mkdir proj
+$ nix flake -t "git+https://codeberg.org/fumnanya/flakes#rust"
+$ direnv allow
+$ cargo init
+```
+
+you can set a registry: `nix registry add personal git+https://codeberg.org/fumnanya/flakes && nix flake -t "personal#rust"`.

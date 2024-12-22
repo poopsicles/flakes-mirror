@@ -1,11 +1,16 @@
 {
   description = "fum's flake templates (with direnv)";
 
-  outputs = { self, ... }: {
+  outputs = { ... }: {
     templates = {
       rust = {
         path = ./rust;
-        description = "sample rust project with toolchain + formatting";
+        description = "sample env with toolchain + formatting, run `cargo init`";
+      };
+
+      typst = {
+        path = ./typst;
+        description = "sample env + tinymist";
       };
     };
   };
