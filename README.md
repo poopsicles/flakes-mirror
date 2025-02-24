@@ -58,7 +58,7 @@ outputs = { self, ... }@inputs: {
 # in configuration.nix
 
 { inputs, ... }: {
-  fonts.packages = with inputs.apple-emoji-nix.packages.${pkgs.system}; [
+  fonts.packages = with inputs.fum.packages.${pkgs.system}; [
     helvetica
     apple-color-emoji
   ];
@@ -88,7 +88,7 @@ and add whatever you need to your packages:
 # in home.nix
 
 { inputs, ... }: {
-  home.packages = with inputs.apple-emoji-nix.packages.${pkgs.system}; [
+  home.packages = with inputs.fum.packages.${pkgs.system}; [
     helvetica
     apple-color-emoji
   ];
