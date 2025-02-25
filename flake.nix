@@ -23,9 +23,12 @@
         # and https://yashgarg.dev/posts/nix-custom-fonts
 
         apple-color-emoji = pkgs.callPackage ./fonts/apple-color-emoji.nix { };
+        apple-color-emoji-bin = pkgs.callPackage ./fonts/apple-color-emoji-bin.nix { };
         helvetica = pkgs.callPackage ./fonts/helvetica.nix { };
         helvetica-neue = pkgs.callPackage ./fonts/helvetica-neue.nix { };
       });
+
+      formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
       templates = {
         rust = {

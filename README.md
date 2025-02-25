@@ -18,8 +18,8 @@ mostly just consists of fonts and flake templates using direnv + nix-direnv:
 
 > to make things easier, you can set a [registry](https://nix.dev/manual/nix/2.24/command-ref/new-cli/nix3-registry) and use it in place of the `git+...` url: 
 > ```sh
-> $ nix registry add personal git+https://codeberg.org/fumnanya/flakes 
-> $ nix flake -t "personal#rust"
+> $ nix registry add fum git+https://codeberg.org/fumnanya/flakes 
+> $ nix flake init -t "fum#rust"
 > ```
 
 using a template is easy, just `nix flake init -t ...` and `direnv allow`:
