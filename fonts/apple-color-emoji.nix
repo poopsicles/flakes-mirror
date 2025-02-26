@@ -10,7 +10,7 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "apple-color-emoji-src";
+  pname = "apple-color-emoji";
   version = "17.4";
 
   src = fetchFromGitHub {

@@ -1,7 +1,7 @@
 { stdenvNoCC, fetchurl }:
 
 stdenvNoCC.mkDerivation rec {
-  pname = "apple-color-emoji";
+  pname = "apple-color-emoji-bin";
   version = "17.4";
   dontUnpack = true;
 
