@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ stdenvNoCC, fetchurl }:
 
-pkgs.stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation rec {
   pname = "helvetica";
   version = "303ef85";
   dontUnpack = true;
 
-  src = pkgs.fetchurl {
+  src = fetchurl {
     url = "https://raw.githubusercontent.com/prchann/fonts/${version}/Helvetica/Helvetica.ttc";
     hash = "sha256-q+i5LR/uIXli+Gno1AdZr61cqLsHTVtYAyP1DH/f+OQ=";
   };

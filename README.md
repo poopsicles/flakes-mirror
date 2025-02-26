@@ -2,17 +2,19 @@
 
 ![feature image showing some emojis with the Apple Color Emoji font](feature.png)
 
-fumnanya's personal flake registry of _Stuff I'm Not Legally Allowed to Put on Nixpkgs™_.
+fumnanya's personal flake registry of _Stuff I'm Not Legally Allowed to Put on Nixpkgs™_. [^1]
 
 mostly just consists of fonts and flake templates using direnv + nix-direnv:
 
+- programs
+  - [switcheroo](./switcheroo.nix): a wrapper for `nixos-rebuild switch`
 - fonts
   - [Apple Color Emoji](fonts/apple-color-emoji.nix)
   - [Helvetica](fonts/helvetica.nix)
   - [Helvetica Neue](fonts/helvetica-neue.nix)
 - templates
-    - [Rust](templates/rust/)
-    - [Typst](templates/typst/)
+  - [Rust](templates/rust/)
+  - [Typst](templates/typst/)
 
 ## usage:
 
@@ -115,3 +117,5 @@ targets.genericLinux.enable = true;
 ```
 
 you can also modify your [fontconfig](https://wiki.archlinux.org/title/Font_configuration#Fontconfig_configuration) to do this instead, an example is [here](https://aur.archlinux.org/cgit/aur.git/tree/75-apple-color-emoji.conf?h=ttf-apple-emoji).
+
+[^1]: see [NixOS/nixpkgs #261100](https://github.com/NixOS/nixpkgs/issues/261100).
