@@ -118,4 +118,4 @@ targets.genericLinux.enable = true;
 
 you can also modify your [fontconfig](https://wiki.archlinux.org/title/Font_configuration#Fontconfig_configuration) to do this instead, an example is [here](https://aur.archlinux.org/cgit/aur.git/tree/75-apple-color-emoji.conf?h=ttf-apple-emoji).
 
-[^1]: see [NixOS/nixpkgs #261100](https://github.com/NixOS/nixpkgs/issues/261100).
+[^1]: see [NixOS/nixpkgs#261100](https://github.com/NixOS/nixpkgs/issues/261100).
