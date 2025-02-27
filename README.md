@@ -8,6 +8,7 @@ mostly just consists of fonts and flake templates using direnv + nix-direnv:
 
 - programs
   - [switcheroo](./switcheroo.nix): a wrapper for `nixos-rebuild switch`
+  - [Mochi](./mochi.nix): a simple spaced-repetition app
 - fonts
   - [Apple Color Emoji](fonts/apple-color-emoji.nix)
   - [Helvetica](fonts/helvetica.nix)
