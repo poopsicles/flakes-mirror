@@ -11,8 +11,10 @@ stdenvNoCC.mkDerivation rec {
   };
 
   installPhase = ''
+    runHook preInstall
     mkdir -p $out/share/fonts/truetype
     cp $src $out/share/fonts/truetype
+    runHook postInstall
   '';
 
   meta = {
