@@ -32,7 +32,6 @@
     cleanup() {
       echo cleaning up...
       cd "$DATA_DIR"
-      if [[ -e result ]]; then rm result; fi
       if [[ -e flake.lock.old ]]; then rm flake.lock.old; fi
     }
 
@@ -46,19 +45,17 @@
 
     if [[ $# = 1 && ( "$1" = "-f" || "$1" = "--fast" ) ]]; then # -f/--fast skips updating the lockfiles
       echo "skipping lockfile update..."
-      eval "$SWITCH"
-      exit 0
+    else
+      cd "$DATA_DIR"
+      cp flake.lock flake.lock.old
+      trap revert INT TERM
+      nix flake update
     fi;
-
-    cd "$DATA_DIR"
-    cp flake.lock flake.lock.old
-    trap revert INT TERM
-    nix flake update
 
     cd "$(mktemp -d)"
     eval "$BUILD"
-    lix diff /run/current-system result
-    printf "\n"
+    lix diff /run/current-system ./result
+    # printf "\n"
 
     eval "$NOTIFY"
     read -r -p "switch? [y/N] " response
