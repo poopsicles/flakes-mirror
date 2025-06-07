@@ -1,8 +1,9 @@
 {
   description = "fum's various flakes that aren't good enough to upstream to nixpkgs";
 
-  # i want to depend on the system's nixpkgs? not sure if this works
-  # inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+  };
 
   outputs =
     { nixpkgs, ... }:
