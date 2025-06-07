@@ -15,7 +15,7 @@
   # (if we had it, then cleaning up after `nix flake update` failing would be easier)
   text = ''
     if [[ $(uname) = "Linux" ]]; then
-      DATA_DIR="/etc/nixos" 
+      DATA_DIR="/etc/nixos"
       BUILD="nixos-rebuild build --log-format internal-json -v |& nom --json"
       SWITCH="pkexec nixos-rebuild switch --log-format internal-json -v |& nom --json"
       NOTIFY="notify-send yo 'got a minute?'"
@@ -53,9 +53,9 @@
     fi;
 
     cd "$(mktemp -d)"
+    echo "building in $(pwd)..."
     eval "$BUILD"
-    lix diff /run/current-system ./result
-    # printf "\n"
+    printf "%s\n\n" "$(lix diff /run/current-system ./result)" # sometimes it has two trailing newlines, sometimes one
 
     eval "$NOTIFY"
     read -r -p "switch? [y/N] " response
