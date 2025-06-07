@@ -28,7 +28,6 @@
 
         # programs
         switcheroo = pkgs.callPackage ./switcheroo.nix { };
-        mochi = pkgs.callPackage ./mochi.nix { };
 
         # default target to build all packages
         default = pkgs.symlinkJoin {
@@ -38,7 +37,6 @@
             helvetica
             helvetica-neue
             switcheroo
-            mochi
           ];
         };
       });
